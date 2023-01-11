@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b6</title>
+</head>
+<body>
+    <h1>Array build- in function</h1>
+    <h2 id="arr">3 4 -1 5 7 8 1</h2>
+    <h2>B1: Sap xep chuoi theo thu tu giam dan</h2>
+    <button onclick="giam()">Sap Xep</button>
+    <h2 id="giam"></h2>
+    <h2>B2: Sap xep chuoi theo thu tang dan khong dung build-in function</h2>
+    <button onclick="tang()">Sap Xep</button>
+    <h2 id="tang"></h2>
+    <script>
+        var str = document.querySelector("#arr").innerHTML;
+        // console.log(str);
+        function giam() {
+            let arr = str.split(" ");
+            for(let i = 0; i <= arr.length; i++) {
+                for(let j = i + 1; j <= arr.length; j++) {
+                    if(arr[i] < arr[j]) {
+                        let temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            console.log(arr);
+            let stringNew = arr.join(" ");
+            console.log(stringNew);
+            document.querySelector("#giam").innerHTML = stringNew;
+        }
+        function tang() {
+            let arr = str.split(" ");
+            for(let i = 0; i <= arr.length; i++) {
+                for(let j = i + 1; j <= arr.length; j++) {
+                    if(arr[i] > arr[j]) {
+                        let temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            console.log(arr);
+            let stringNew = arr.join(" ");
+            console.log(stringNew);
+            document.querySelector("#tang").innerHTML = stringNew;
+        }
+    </script>
+</body>
+</html>

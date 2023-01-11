@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b3</title>
+    <style>
+        .user_item {
+            color: green;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="target">
+
+    </ul>
+    <script>
+        var users = [
+            { id: 1, name: "Jame Smith", gender: 1 },
+            { id: 2, name: "Isla Brown", gender: 2 },
+            { id: 3, name: "Amelia Davies", gender: 2 },
+            { id: 4, name: "Jacob Evans", gender: 1 }
+        ];
+        var target = document.querySelector("#target");
+        users.forEach(element => {
+            if(element.gender == 1) {
+                var test = element.gender = "male";
+                var html = '<li>' + element.id + ' - ' + element.name + ' - ' + test + '</li>';
+            } else {
+                var test = element.gender = "female";
+                var html = '<li>' + element.id + ' - ' + element.name + ' - ' + test + '</li>';
+            }
+            target.insertAdjacentHTML('beforeend', html);
+        });
+    </script>
+</body>
+</html>

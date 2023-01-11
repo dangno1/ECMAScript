@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b4</title>
+    <style>
+        .user_item {
+            color: green;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="from">
+        <div>
+            <label>ID</label>
+            <input type="number" id="addUserId" value="" placeholder="">
+        </div>
+        <div>
+            <label>Name</label>
+            <input type="text" id="addUserText" value="" placeholder="">
+        </div>
+        <div>
+            <label>Gender</label>
+            <select id="addUserGender">
+                <option value="1">male</option>
+                <option value="2">female</option>
+            </select>
+        </div>
+        <div>
+            <button type="button" id="addAction" onclick="addElement()">Add</button>
+        </div>
+    </div>
+    <ul id="target">
+
+    </ul>
+    <script>
+        var users = [
+            { id: 1, name: "Jame Smith", gender: 1 },
+            { id: 2, name: "Isla Brown", gender: 2 },
+            { id: 3, name: "Amelia Davies", gender: 2 },
+            { id: 4, name: "Jacob Evans", gender: 1 }
+        ];
+        var target = document.querySelector("#target");
+        users.forEach(element => {
+            if(element.gender == 1) {
+                var test = element.gender = "male";
+                var html = '<li>' + element.id + ' - ' + element.name + ' - ' + test + '</li>';
+            } else {
+                var test = element.gender = "female";
+                var html = '<li>' + element.id + ' - ' + element.name + ' - ' + test + '</li>';
+            }
+            target.insertAdjacentHTML('beforeend', html);
+        });
+        
+        function addElement() {
+            var id = document.querySelector('#addUserId').value;
+            var name = document.querySelector('#addUserText').value;
+            var gender = document.querySelector('#addUserGender').value;
+            // console.log(id, name, gender);
+            if(gender == 1) {
+                var test = gender = "male";
+                var html = '<li>' + id + ' - ' + name + ' - ' + test + '</li>';
+            } else {
+                var test = gender = "female";
+                var html = '<li>' + id + ' - ' + name + ' - ' + test + '</li>';
+            }
+            target.insertAdjacentHTML('beforeend', html);
+        }
+
+       
+
+    </script>
+</body>
+</html>

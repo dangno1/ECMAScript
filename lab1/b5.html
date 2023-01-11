@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>b5</title>
+</head>
+<body>
+    <div>
+        <label>String</label>
+        <input type="text" id="valueText"><br>
+    </div>
+    <div>
+        <button type="button" id="addAction" onclick="convert()">Convert</button>
+    </div>
+    <h2 id="h2"></h2>
+    <script>
+        function convert() {
+            var text = document.querySelector('#valueText').value;
+            var textNew = text.replace(/[^a-zA-Z ]/g, '');
+            var arrText = textNew.split("");
+            var arrNew = [];
+            arrText.forEach(element => {
+                if(element != " ") {
+                    arrNew.push(element);
+                }
+            });
+            var stringNew = arrNew.join("");
+            console.log(stringNew);
+            document.querySelector("#h2").innerHTML = stringNew;
+        }
+    </script>
+</body>
+</html>
